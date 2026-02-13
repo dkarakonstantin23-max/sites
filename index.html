@@ -5,499 +5,242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Марина Пирог — LR Leader</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@800&family=Playfair+Display:ital,wght@1,700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-    scroll-behavior: smooth;
-}
 body {
     font-family: 'Jost', sans-serif;
-    background: #1a1510;
-    background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(198,167,94,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(225,200,130,0.06) 0%, transparent 50%);
+    background: #0a0a0a;
     color: #fff;
     overflow-x: hidden;
 }
 
-/* --- АНІМАЦІЇ --- */
-.fade-up {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-scale {
-    opacity: 0;
-    transform: scale(0.85);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-scale.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-.delay-2 { transition-delay: 0.2s; }
-
-/* --- ФОТО --- */
-.photo-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 30px 20px 5px;
-}
-.photo-frame {
-    width: 90%;
-    max-width: 900px;
-    border-radius: 20px;
-    overflow: hidden;
+.hero-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
-.photo-frame img {
+
+.hero-image {
     width: 100%;
     display: block;
-    object-fit: cover;
-    object-position: top center;
-}
-.photo-frame::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35%;
-    height: 100%;
-    background: linear-gradient(to left, #1a1510 0%, rgba(26,21,16,0.7) 40%, transparent 100%);
-    pointer-events: none;
-}
-.photo-frame::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    background: linear-gradient(to top, #1a1510, transparent);
-    pointer-events: none;
-    z-index: 1;
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
-/* --- КОНТЕЙНЕР --- */
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 20px auto 0;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 30px;
+.hero-header-text {
+    position: absolute;
+    top: 180px; 
+    left: 8%;
+    z-index: 10;
 }
 
-/* --- ІМ'Я --- */
-.name-block {
-    text-align: center;
-    margin-bottom: 45px;
-    padding-top: 10px;
-}
-.name-block h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 46px;
-    font-weight: 100;
-    color: #fff;
-    letter-spacing: 14px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-.name-block .subtitle {
-    font-family: 'Lora', serif;
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #a89470;
-    font-weight: 400;
+.hero-header-text .gold-italic {
+    font-family: 'Playfair Display', serif;
     font-style: italic;
-    margin-top: 8px;
-}
-.name-line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #c6a75e, transparent);
-    margin: 15px auto 0;
+    font-weight: 700;
+    color: #c6a75e;
+    font-size: clamp(34px, 10vw, 52px);
+    line-height: 1.1;
 }
 
-/* --- СЕКЦІЇ --- */
-.section {
-    padding: 38px 42px;
-    border-radius: 20px;
-    margin-bottom: 22px;
-    position: relative;
-    overflow: hidden;
-}
-.section:hover {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
+.hero-header-text .white-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 6vw, 34px);
+    text-transform: uppercase;
+    color: #fff;
+    margin: 4px 0;
 }
 
-.section.milk {
-    background: linear-gradient(135deg, #faf6ee 0%, #f3ead8 50%, #efe5d0 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.8);
-}
-.section.milk:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.8);
-}
-.section.cream {
-    background: linear-gradient(135deg, #fdf8f0 0%, #f7edde 50%, #f0e4d0 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9);
-}
-.section.cream:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
-}
-.section.vanilla {
-    background: linear-gradient(135deg, #fff9f0 0%, #f8f0e3 50%, #f2e8d5 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.85);
-}
-.section.vanilla:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.85);
-}
-.section.pearl {
-    background: linear-gradient(135deg, #f9f4eb 0%, #f0e7d6 50%, #ebe0cc 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
-}
-.section.pearl:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.7);
-}
-.section.linen {
-    background: linear-gradient(135deg, #faf7f2 0%, #f2ece2 50%, #ece4d6 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.75);
-}
-.section.linen:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.75);
+.hero-header-text .gold-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #c6a75e;
+    font-size: clamp(14px, 4vw, 20px);
 }
 
-.section::before {
-    content: '';
+.name-plate-on-photo {
     position: absolute;
-    left: 0;
-    top: 15%;
-    height: 70%;
-    width: 3px;
-    background: linear-gradient(to bottom, transparent, #c6a75e, transparent);
-    border-radius: 3px;
+    bottom: 15%;
+    left: 8%;
+    background: #e9dec4;
+    color: #1a1510;
+    padding: 16px 24px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    z-index: 12;
 }
 
-/* --- ЗАГОЛОВКИ ПРОПИСОМ ЗОЛОТИМ --- */
-.section h2 {
+.name-plate-on-photo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.name-plate-on-photo p {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8a7a5a;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.cta-overlay-box {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+    right: 5%;
+    /* Зроблено прозорішим за запитом */
+    background: rgba(255,255,255,0.03); 
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+}
+.cta-overlay-box b { color: #c6a75e; }
+
+.container {
+    width: 92%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.section-block {
+    background: linear-gradient(135deg, #faf6ee 0%, #efe5d0 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    color: #4a3d30;
+}
+
+.section-block h2 {
     font-family: 'Great Vibes', cursive;
     font-weight: 400;
     color: #c6a75e;
-    font-size: 44px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 12px;
 }
 
-/* --- ТЕКСТ ЗВИЧАЙНИЙ --- */
-.section p {
-    font-family: 'Jost', sans-serif;
-    font-size: 19px;
-    line-height: 1.85;
-    color: #4a3d30;
-    font-weight: 400;
-}
+.section-block p { font-size: 17px; line-height: 1.6; }
 
-/* --- ТОП-20 --- */
-.top-badge-inline {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 22px;
-    padding: 16px 26px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
-    box-shadow: 0 6px 20px rgba(198,167,94,0.35);
-    position: relative;
-    overflow: hidden;
-}
-.top-badge-inline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-    animation: shimmer 3s infinite;
-}
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-.top-badge-inline .badge-text {
-    font-family: 'Jost', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #1a1510;
-    letter-spacing: 1.5px;
-    line-height: 1.3;
-    text-transform: uppercase;
-}
-
-.divider {
-    text-align: center;
-    margin: 10px 0;
-    opacity: 0.4;
-    font-size: 14px;
-    color: #c6a75e;
-    letter-spacing: 8px;
-}
-
-/* --- КНОПКА --- */
-.btn-wrapper {
-    text-align: center;
-    margin-top: 45px;
-}
-.btn {
+/* Стиль для золотої кнопки в блоці "Про мене" */
+.gold-badge-inline {
     display: inline-block;
-    padding: 24px 80px;
-    border-radius: 60px;
-    background: linear-gradient(135deg, #c6a75e, #e0bf75, #c6a75e);
-    background-size: 200% 100%;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #e0bf75, #c6a75e);
     color: #1a1510;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
     text-transform: uppercase;
-    text-decoration: none;
-    box-shadow:
-        0 10px 35px rgba(198,167,94,0.4),
-        0 3px 10px rgba(0,0,0,0.2);
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-}
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: 0.6s;
-}
-.btn:hover::before {
-    left: 100%;
-}
-.btn:hover {
-    transform: scale(1.07);
-    box-shadow:
-        0 15px 45px rgba(198,167,94,0.5),
-        0 5px 15px rgba(0,0,0,0.25);
-    background-position: 100% 0;
+    letter-spacing: 0.5px;
 }
 
-/* --- INSTAGRAM --- */
-.instagram-footer {
+.divider-dots {
     text-align: center;
-    padding: 40px 20px 50px;
+    margin: -10px 0 15px;
+    color: #c6a75e;
+    font-size: 18px;
+    letter-spacing: 5px;
 }
-.instagram-footer .ig-line {
-    width: 40px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(198,167,94,0.4), transparent);
-    margin: 0 auto 20px;
-}
-.instagram-footer a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(198,167,94,0.15), rgba(198,167,94,0.05));
-    border: 1px solid rgba(198,167,94,0.3);
-    transition: 0.4s;
-    text-decoration: none;
-}
-.instagram-footer a:hover {
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
-    border-color: transparent;
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(198,167,94,0.4);
-}
-.instagram-footer a svg {
-    width: 28px;
-    height: 28px;
-    fill: #c6a75e;
-    transition: 0.4s;
-}
-.instagram-footer a:hover svg {
-    fill: #1a1510;
-}
-.instagram-footer .ig-name {
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px;
-    letter-spacing: 3px;
+
+.fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.btn-next {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 22px;
+    background: linear-gradient(135deg, #c6a75e, #e0bf75);
+    border-radius: 50px;
+    text-align: center;
+    color: #1a1510;
+    font-weight: 800;
     text-transform: uppercase;
-    color: rgba(198,167,94,0.5);
-    margin-top: 14px;
-}
-
-/* --- АДАПТИВ --- */
-@media(max-width:768px){
-    .name-block h1 {
-        font-size: 34px;
-        letter-spacing: 8px;
-    }
-    .section {
-        padding: 28px 28px;
-        border-radius: 16px;
-    }
-    .section h2 { font-size: 38px; }
-    .section p { font-size: 17px; }
-    .btn {
-        padding: 22px 65px;
-        font-size: 18px;
-        letter-spacing: 4px;
-    }
-}
-
-@media(max-width:480px){
-    .name-block h1 {
-        font-size: 26px;
-        letter-spacing: 5px;
-    }
-    .name-block .subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
-    }
-    .photo-frame {
-        border-radius: 16px;
-    }
-    .section {
-        padding: 24px 22px;
-        margin-bottom: 18px;
-    }
-    .section h2 { font-size: 32px; }
-    .section p { font-size: 15px; }
-    .top-badge-inline {
-        padding: 14px 20px;
-    }
-    .top-badge-inline .badge-text {
-        font-size: 14px;
-    }
-    .btn {
-        padding: 20px 50px;
-        font-size: 16px;
-        letter-spacing: 3px;
-    }
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(198,167,94,0.4);
 }
 </style>
 </head>
 <body>
 
-<!-- ФОТО -->
-<div class="photo-wrapper fade-scale">
-    <div class="photo-frame">
-        <img src="me.png" alt="Марина Пирог">
+<div class="hero-wrapper">
+    <div class="hero-header-text">
+        <div class="gold-italic">Побудуй</div>
+        <div class="white-bold">МІЖНАРОДНИЙ БІЗНЕС</div>
+        <div class="gold-sub">в сфері краси та здоров'я</div>
+    </div>
+
+    <img src="me.png" class="hero-image" alt="Марина Пирог">
+
+    <div class="name-plate-on-photo">
+        <h2>МАРИНА ПИРОГ</h2>
+        <p>Лідер ТОП-20 на ринку України</p>
+    </div>
+
+    <div class="cta-overlay-box">
+        Приєднуйся до моєї команди та розвивайся разом <br>
+        з <b>німецьким брендом у 30+ країнах світу</b>
     </div>
 </div>
 
-<!-- ТЕКСТ -->
 <div class="container">
-
-    <div class="name-block fade-up delay-2">
-        <h1>МАРИНА ПИРОГ</h1>
-        <div class="subtitle">LR Health & Beauty Leader</div>
-        <div class="name-line"></div>
-    </div>
-
-    <div class="section milk fade-left">
+    <div class="section-block fade-in">
         <h2>Про мене</h2>
-        <p>Лідер німецької компанії LR. Будую системний бізнес у 29 країнах світу. Створюю сильні команди та допомагаю жінкам виходити на новий рівень доходу і мислення.</p>
-        <div class="top-badge-inline">
-            <div class="badge-text">Входжу в ТОП-20 лідерів LR в Україні</div>
-        </div>
+        <p>Лідер німецької компанії LR. Будую системний бізнес у <b>30 країнах світу</b>. Створюю сильні команди та допомагаю жінкам виходити на новий рівень доходу і мислення.</p>
+        <div class="gold-badge-inline">ВХОДЖУ В ТОП-20 ЛІДЕРІВ LR В УКРАЇНІ</div>
     </div>
 
-    <div class="divider fade-up">◆ ◆ ◆</div>
+    <div class="divider-dots">◆ ◆ ◆</div>
 
-    <div class="section cream fade-right">
+    <div class="section-block fade-in">
         <h2>Партнерство</h2>
         <p>Покрокове навчання, підтримка, стратегія росту — все, щоб ви досягли максимуму у своєму бізнесі.</p>
     </div>
 
-    <div class="divider fade-up">◆ ◆ ◆</div>
+    <div class="divider-dots">◆ ◆ ◆</div>
 
-    <div class="section vanilla fade-left">
+    <div class="section-block fade-in">
         <h2>Наставництво</h2>
         <p>Я веду до результату кожного, надихаю та підтримую команду на кожному кроці шляху до успіху.</p>
     </div>
 
-    <div class="divider fade-up">◆ ◆ ◆</div>
+    <div class="divider-dots">◆ ◆ ◆</div>
 
-    <div class="section pearl fade-right">
+    <div class="section-block fade-in">
         <h2>Експертність</h2>
         <p>Підбір продуктів під конкретні потреби, реальні результати та задоволення клієнтів на найвищому рівні.</p>
     </div>
 
-    <div class="divider fade-up">◆ ◆ ◆</div>
+    <div class="divider-dots">◆ ◆ ◆</div>
 
-    <div class="section linen fade-scale">
+    <div class="section-block fade-in">
         <h2>Команда</h2>
-        <p>Оточення, яке росте.<br>Рівень, який підтягує.<br>Масштаб, який надихає.</p>
+        <p>Оточення, яке росте. Рівень, який підтягує. Масштаб, який надихає.</p>
     </div>
 
-    <div class="btn-wrapper fade-up delay-2">
-        <a href="second.html" class="btn">Далі →</a>
-    </div>
-
-</div>
-
-<!-- INSTAGRAM -->
-<div class="instagram-footer fade-up">
-    <div class="ig-line"></div>
-    <a href="https://www.instagram.com/marina_pirog?igsh=MW50bXl1MTBsdGdsNw==" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-        </svg>
-    </a>
-    <div class="ig-name">@marina_pirog</div>
+    <a href="second.html" class="btn-next">Далі →</a>
 </div>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-}, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-});
+}, { threshold: 0.1 });
 
-document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale').forEach(el => {
-    observer.observe(el);
-});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>
