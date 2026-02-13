@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Співпраця | Марина Пирог</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Jost', sans-serif;
+    background: #1a1510;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(198,167,94,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(225,200,130,0.06) 0%, transparent 50%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 0 60px;
+}
+
+/* --- ЗАГОЛОВОК --- */
+.page-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.page-title h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+}
+.page-title .title-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c6a75e, transparent);
+    margin: 15px auto 0;
+}
+
+/* --- СЕКЦІЇ --- */
+.section {
+    padding: 32px 38px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+.section:hover {
+    transform: translateY(-4px);
+}
+
+.section.milk {
+    background: linear-gradient(135deg, #faf6ee 0%, #f3ead8 50%, #efe5d0 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.section.milk:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.section.cream {
+    background: linear-gradient(135deg, #fdf8f0 0%, #f7edde 50%, #f0e4d0 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.section.cream:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.section.vanilla {
+    background: linear-gradient(135deg, #fff9f0 0%, #f8f0e3 50%, #f2e8d5 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+.section.vanilla:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+.section.pearl {
+    background: linear-gradient(135deg, #f9f4eb 0%, #f0e7d6 50%, #ebe0cc 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.section.pearl:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.section.linen {
+    background: linear-gradient(135deg, #faf7f2 0%, #f2ece2 50%, #ece4d6 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.75);
+}
+.section.linen:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #c6a75e, transparent);
+    border-radius: 3px;
+}
+
+.section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    margin-bottom: 14px;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(198,167,94,0.3);
+}
+
+.section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 18px;
+    color: #5a4225;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+.section ul li {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5c4f3e;
+    padding: 10px 0 10px 16px;
+    position: relative;
+    border-bottom: 1px solid rgba(198,167,94,0.12);
+}
+.section ul li:last-child {
+    border-bottom: none;
+}
+.section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #c6a75e;
+}
+
+/* --- ФОРМА АНКЕТА --- */
+.form-section {
+    padding: 38px 42px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #faf6ee 0%, #f3ead8 50%, #efe5d0 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.form-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #c6a75e, transparent);
+    border-radius: 3px;
+}
+.form-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #5a4225;
+}
+.form-section .form-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: #8a7d6a;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+.form-group label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5a4225;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(198,167,94,0.3);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.7);
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    color: #3d3225;
+    outline: none;
+    transition: 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c6a75e;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 0 3px rgba(198,167,94,0.15);
+}
+.form-group input::placeholder {
+    color: #b5a88f;
+    font-weight: 300;
+}
+
+/* Номер питання */
+.form-group .q-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    color: #1a1510;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.form-group .label-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.form-group .label-row span:last-child {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5a4225;
+    letter-spacing: 0.5px;
+}
+
+/* Кнопка відправити */
+.btn-wrapper {
+    text-align: center;
+    margin-top: 35px;
+}
+.btn-submit {
+    display: inline-block;
+    padding: 18px 60px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #c6a75e, #e0bf75, #c6a75e);
+    background-size: 200% 100%;
+    color: #1a1510;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow:
+        0 8px 25px rgba(198,167,94,0.35),
+        0 2px 8px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.6s;
+}
+.btn-submit:hover::before {
+    left: 100%;
+}
+.btn-submit:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 12px 35px rgba(198,167,94,0.45),
+        0 4px 12px rgba(0,0,0,0.25);
+    background-position: 100% 0;
+}
+
+/* Кнопка-посилання */
+.btn-link {
+    display: inline-block;
+    padding: 18px 60px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #c6a75e, #e0bf75, #c6a75e);
+    background-size: 200% 100%;
+    color: #1a1510;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow:
+        0 8px 25px rgba(198,167,94,0.35),
+        0 2px 8px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+.btn-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.6s;
+}
+.btn-link:hover::before {
+    left: 100%;
+}
+.btn-link:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 12px 35px rgba(198,167,94,0.45),
+        0 4px 12px rgba(0,0,0,0.25);
+    background-position: 100% 0;
+}
+
+/* Розділювач */
+.divider {
+    text-align: center;
+    margin: 10px 0;
+    opacity: 0.4;
+    font-size: 14px;
+    color: #c6a75e;
+    letter-spacing: 8px;
+}
+
+/* Повідомлення успіху */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 40px;
+}
+.success-message .check-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.success-message h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: #5a4225;
+    margin-bottom: 10px;
+}
+.success-message p {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    color: #8a7d6a;
+}
+
+/* --- АДАПТИВ --- */
+@media(max-width:768px){
+    .page-title h1 {
+        font-size: 32px;
+        letter-spacing: 8px;
+    }
+    .section, .form-section {
+        padding: 26px 28px;
+        border-radius: 16px;
+    }
+    .section h2, .form-section h2 { font-size: 24px; }
+    .section ul li { font-size: 15px; }
+}
+
+@media(max-width:480px){
+    .page-title h1 {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+    .section, .form-section {
+        padding: 22px 22px;
+        margin-bottom: 18px;
+    }
+    .section h2, .form-section h2 { font-size: 22px; }
+    .section ul li {
+        font-size: 14px;
+        padding: 8px 0 8px 14px;
+    }
+    .form-group input,
+    .form-group select {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+    .btn-submit, .btn-link {
+        padding: 16px 45px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="page-title">
+        <h1>СПІВПРАЦЯ</h1>
+        <div class="title-line"></div>
+    </div>
+
+    <!-- ДЛЯ КОГО -->
+    <div class="section milk">
+        <div class="section-icon">👩‍💼</div>
+        <h2>Для кого ця співпраця</h2>
+        <ul>
+            <li>Жінки, які хочуть додатковий дохід</li>
+            <li>Мами в декреті</li>
+            <li>Ті, хто хоче масштаб</li>
+            <li>Ті, хто готові працювати</li>
+        </ul>
+    </div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <!-- ЩО ОТРИМАЄТЕ -->
+    <div class="section cream">
+        <div class="section-icon">📌</div>
+        <h2>Що ви отримаєте в команді</h2>
+        <ul>
+            <li>Навчання з нуля до результату</li>
+            <li>Постійна підтримка наставника</li>
+            <li>Чітка стратегія росту</li>
+        </ul>
+    </div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <!-- РЕЗУЛЬТАТ -->
+    <div class="section vanilla">
+        <div class="section-icon">🎯</div>
+        <h2>Результат, до якого веду</h2>
+        <ul>
+            <li>Стабільний дохід</li>
+            <li>Впевненість у собі</li>
+            <li>Сильна команда</li>
+            <li>Особистий бренд</li>
+        </ul>
+    </div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <!-- ВАРІАНТИ -->
+    <div class="section pearl">
+        <div class="section-icon">✔</div>
+        <h2>Варіанти співпраці</h2>
+        <ul>
+            <li>Бути клієнтом — користуватись продуктами зі знижкою</li>
+            <li>Бути VIP — максимальна знижка та бонуси</li>
+            <li>Бути партнером — будувати бізнес разом зі мною</li>
+        </ul>
+    </div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <!-- АНКЕТА -->
+    <div class="form-section" id="formSection">
+
+        <div class="section-icon">📝</div>
+        <h2>Анкета для співпраці</h2>
+        <div class="form-sub">Заповніть форму — і я зв'яжусь з вами особисто</div>
+
+        <form id="anketaForm">
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">1</span>
+                    <span>Прізвище та ім'я</span>
+                </div>
+                <input type="text" name="name" placeholder="Ваше прізвище та ім'я" required>
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">2</span>
+                    <span>Номер телефону</span>
+                </div>
+                <input type="tel" name="phone" placeholder="+380 __ ___ __ __" required>
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">3</span>
+                    <span>Електронна адреса</span>
+                </div>
+                <input type="email" name="email" placeholder="email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">4</span>
+                    <span>Місце роботи / Посада</span>
+                </div>
+                <input type="text" name="job" placeholder="Де працюєте та ким">
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">5</span>
+                    <span>Поточний дохід (в місяць)</span>
+                </div>
+                <input type="text" name="income_now" placeholder="Наприклад: 15 000 грн">
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">6</span>
+                    <span>Бажаний дохід (в місяць)</span>
+                </div>
+                <input type="text" name="income_want" placeholder="Наприклад: 50 000 грн">
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <span class="q-number">7</span>
+                    <span>Скільки годин на день можете приділяти бізнесу з LR?</span>
+                </div>
+                <input type="text" name="hours" placeholder="Наприклад: 2-3 години">
+            </div>
+
+            <div class="btn-wrapper">
+                <button type="submit" class="btn-submit">Надіслати анкету</button>
+            </div>
+
+        </form>
+
+        <!-- Повідомлення після відправки -->
+        <div class="success-message" id="successMsg">
+            <div class="check-icon">✓</div>
+            <h3>Дякую!</h3>
+            <p>Вашу анкету отримано. Я зв'яжусь з вами найближчим часом.</p>
+        </div>
+
+    </div>
+
+    <!-- КНОПКА НАЗАД -->
+    <div class="btn-wrapper">
+        <a href="index.html" class="btn-link">← На головну</a>
+    </div>
+
+</div>
+
+<script>
+document.getElementById('anketaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.querySelector('.form-section .section-icon').style.display = 'none';
+    document.querySelector('.form-section h2').style.display = 'none';
+    document.querySelector('.form-section .form-sub').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
