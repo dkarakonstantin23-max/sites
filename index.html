@@ -30,9 +30,10 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
+/* АДАПТОВАНИЙ ЗАГОЛОВОК (ЗМЕНШЕНО ШРИФТ) */
 .hero-header-text {
     position: absolute;
-    top: 180px; 
+    top: 170px; 
     left: 8%;
     z-index: 10;
 }
@@ -42,71 +43,73 @@ body {
     font-style: italic;
     font-weight: 700;
     color: #c6a75e;
-    font-size: clamp(34px, 10vw, 52px);
+    font-size: clamp(28px, 8vw, 42px); /* Трохи зменшено */
     line-height: 1.1;
 }
 
 .hero-header-text .white-bold {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: clamp(20px, 6vw, 34px);
+    font-size: clamp(16px, 5vw, 28px); /* Трохи зменшено */
     text-transform: uppercase;
     color: #fff;
-    margin: 4px 0;
+    margin: 2px 0;
 }
 
 .hero-header-text .gold-sub {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: #c6a75e;
-    font-size: clamp(14px, 4vw, 20px);
+    font-size: clamp(12px, 3.5vw, 18px); /* Трохи зменшено */
 }
 
+/* ПЛАШКА З ІМЕНЕМ (КОМПАКТНІША) */
 .name-plate-on-photo {
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 8%;
     background: #e9dec4;
     color: #1a1510;
-    padding: 16px 24px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     z-index: 12;
 }
 
 .name-plate-on-photo h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 16px; /* Зменшено для мобілки */
     text-transform: uppercase;
 }
 
 .name-plate-on-photo p {
-    font-size: 10px;
+    font-size: 9px; /* Зменшено */
     font-weight: 700;
     color: #8a7a5a;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
+/* НИЖНІЙ БЛОК (КОМПАКТНІШИЙ) */
 .cta-overlay-box {
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     left: 5%;
     right: 5%;
-    /* Зроблено прозорішим за запитом */
     background: rgba(255,255,255,0.03); 
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 18px;
-    padding: 18px;
+    border-radius: 15px;
+    padding: 14px;
     text-align: center;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 12px; /* Зменшено шрифт тексту */
+    line-height: 1.4;
     z-index: 10;
     backdrop-filter: blur(3px);
 }
 .cta-overlay-box b { color: #c6a75e; }
 
+/* --- СЕКЦІЇ --- */
 .container {
     width: 92%;
     max-width: 600px;
@@ -131,7 +134,6 @@ body {
 
 .section-block p { font-size: 17px; line-height: 1.6; }
 
-/* Стиль для золотої кнопки в блоці "Про мене" */
 .gold-badge-inline {
     display: inline-block;
     margin-top: 15px;
