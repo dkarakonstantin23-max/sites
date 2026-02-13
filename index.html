@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Марина Пирог — LR Leader</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +32,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
 .fade-left {
     opacity: 0;
     transform: translateX(-60px);
@@ -42,7 +41,6 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
-
 .fade-right {
     opacity: 0;
     transform: translateX(60px);
@@ -52,7 +50,6 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
-
 .fade-scale {
     opacity: 0;
     transform: scale(0.85);
@@ -62,7 +59,6 @@ body {
     opacity: 1;
     transform: scale(1);
 }
-
 .delay-2 { transition-delay: 0.2s; }
 
 /* --- ФОТО --- */
@@ -113,7 +109,7 @@ body {
     margin: 20px auto 0;
     position: relative;
     z-index: 1;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 /* --- ІМ'Я --- */
@@ -168,7 +164,6 @@ body {
 .section.milk:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.8);
 }
-
 .section.cream {
     background: linear-gradient(135deg, #fdf8f0 0%, #f7edde 50%, #f0e4d0 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9);
@@ -176,7 +171,6 @@ body {
 .section.cream:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
 }
-
 .section.vanilla {
     background: linear-gradient(135deg, #fff9f0 0%, #f8f0e3 50%, #f2e8d5 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.85);
@@ -184,7 +178,6 @@ body {
 .section.vanilla:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.85);
 }
-
 .section.pearl {
     background: linear-gradient(135deg, #f9f4eb 0%, #f0e7d6 50%, #ebe0cc 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
@@ -192,7 +185,6 @@ body {
 .section.pearl:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.7);
 }
-
 .section.linen {
     background: linear-gradient(135deg, #faf7f2 0%, #f2ece2 50%, #ece4d6 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.75);
@@ -212,92 +204,22 @@ body {
     border-radius: 3px;
 }
 
-/* --- ЗАГОЛОВКИ --- */
-.section.milk h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 36px;
-    color: #4a3520;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
-}
-.section.milk p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 19px;
-    line-height: 1.9;
-    color: #4a3d30;
-    font-weight: 300;
-}
-
-.section.cream h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: #4a3520;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-.section.cream p {
-    font-family: 'Lora', serif;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #4a3d30;
+/* --- ЗАГОЛОВКИ ПРОПИСОМ ЗОЛОТИМ --- */
+.section h2 {
+    font-family: 'Great Vibes', cursive;
     font-weight: 400;
-    font-style: italic;
+    color: #c6a75e;
+    font-size: 44px;
+    margin-bottom: 20px;
 }
 
-.section.vanilla h2 {
-    font-family: 'Lora', serif;
-    font-weight: 600;
-    font-size: 32px;
-    color: #4a3520;
-    font-style: italic;
-    letter-spacing: 0.5px;
-    margin-bottom: 18px;
-}
-.section.vanilla p {
+/* --- ТЕКСТ ЗВИЧАЙНИЙ --- */
+.section p {
     font-family: 'Jost', sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.85;
     color: #4a3d30;
     font-weight: 400;
-    letter-spacing: 0.3px;
-}
-
-.section.pearl h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    font-size: 34px;
-    color: #4a3520;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-.section.pearl p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    line-height: 1.75;
-    color: #4a3d30;
-    font-weight: 500;
-}
-
-.section.linen h2 {
-    font-family: 'Jost', sans-serif;
-    font-weight: 600;
-    font-size: 26px;
-    color: #4a3520;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-.section.linen p {
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px;
-    line-height: 2;
-    color: #4a3d30;
-    font-weight: 200;
-    letter-spacing: 1px;
 }
 
 /* --- ТОП-20 --- */
@@ -328,9 +250,9 @@ body {
     100% { left: 100%; }
 }
 .top-badge-inline .badge-text {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
     color: #1a1510;
     letter-spacing: 1.5px;
     line-height: 1.3;
@@ -392,6 +314,53 @@ body {
     background-position: 100% 0;
 }
 
+/* --- INSTAGRAM --- */
+.instagram-footer {
+    text-align: center;
+    padding: 40px 20px 50px;
+}
+.instagram-footer .ig-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(198,167,94,0.4), transparent);
+    margin: 0 auto 20px;
+}
+.instagram-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(198,167,94,0.15), rgba(198,167,94,0.05));
+    border: 1px solid rgba(198,167,94,0.3);
+    transition: 0.4s;
+    text-decoration: none;
+}
+.instagram-footer a:hover {
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    border-color: transparent;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(198,167,94,0.4);
+}
+.instagram-footer a svg {
+    width: 28px;
+    height: 28px;
+    fill: #c6a75e;
+    transition: 0.4s;
+}
+.instagram-footer a:hover svg {
+    fill: #1a1510;
+}
+.instagram-footer .ig-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(198,167,94,0.5);
+    margin-top: 14px;
+}
+
 /* --- АДАПТИВ --- */
 @media(max-width:768px){
     .name-block h1 {
@@ -402,16 +371,8 @@ body {
         padding: 28px 28px;
         border-radius: 16px;
     }
-    .section.milk h2 { font-size: 30px; }
-    .section.milk p { font-size: 17px; }
-    .section.cream h2 { font-size: 24px; }
-    .section.cream p { font-size: 18px; }
-    .section.vanilla h2 { font-size: 28px; }
-    .section.vanilla p { font-size: 16px; }
-    .section.pearl h2 { font-size: 28px; }
-    .section.pearl p { font-size: 19px; }
-    .section.linen h2 { font-size: 22px; }
-    .section.linen p { font-size: 20px; }
+    .section h2 { font-size: 38px; }
+    .section p { font-size: 17px; }
     .btn {
         padding: 22px 65px;
         font-size: 18px;
@@ -435,16 +396,8 @@ body {
         padding: 24px 22px;
         margin-bottom: 18px;
     }
-    .section.milk h2 { font-size: 26px; }
-    .section.milk p { font-size: 16px; }
-    .section.cream h2 { font-size: 20px; }
-    .section.cream p { font-size: 16px; }
-    .section.vanilla h2 { font-size: 24px; }
-    .section.vanilla p { font-size: 15px; }
-    .section.pearl h2 { font-size: 22px; letter-spacing: 2px; }
-    .section.pearl p { font-size: 17px; }
-    .section.linen h2 { font-size: 18px; letter-spacing: 4px; }
-    .section.linen p { font-size: 18px; }
+    .section h2 { font-size: 32px; }
+    .section p { font-size: 15px; }
     .top-badge-inline {
         padding: 14px 20px;
     }
@@ -488,7 +441,7 @@ body {
     <div class="divider fade-up">◆ ◆ ◆</div>
 
     <div class="section cream fade-right">
-        <h2>ПАРТНЕРСТВО</h2>
+        <h2>Партнерство</h2>
         <p>Покрокове навчання, підтримка, стратегія росту — все, щоб ви досягли максимуму у своєму бізнесі.</p>
     </div>
 
@@ -502,14 +455,14 @@ body {
     <div class="divider fade-up">◆ ◆ ◆</div>
 
     <div class="section pearl fade-right">
-        <h2>ЕКСПЕРТНІСТЬ</h2>
+        <h2>Експертність</h2>
         <p>Підбір продуктів під конкретні потреби, реальні результати та задоволення клієнтів на найвищому рівні.</p>
     </div>
 
     <div class="divider fade-up">◆ ◆ ◆</div>
 
     <div class="section linen fade-scale">
-        <h2>КОМАНДА</h2>
+        <h2>Команда</h2>
         <p>Оточення, яке росте.<br>Рівень, який підтягує.<br>Масштаб, який надихає.</p>
     </div>
 
@@ -517,6 +470,17 @@ body {
         <a href="second.html" class="btn">Далі →</a>
     </div>
 
+</div>
+
+<!-- INSTAGRAM -->
+<div class="instagram-footer fade-up">
+    <div class="ig-line"></div>
+    <a href="https://www.instagram.com/marina_pirog?igsh=MW50bXl1MTBsdGdsNw==" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+    </a>
+    <div class="ig-name">@marina_pirog</div>
 </div>
 
 <script>

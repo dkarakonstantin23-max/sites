@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Співпраця | Марина Пирог</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Jost', sans-serif;
     background: #1a1510;
@@ -19,11 +22,51 @@ body {
     overflow-x: hidden;
 }
 
+/* --- АНІМАЦІЇ --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade-scale {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+.delay-2 { transition-delay: 0.2s; }
+
+/* --- КОНТЕЙНЕР --- */
 .container {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px 0 60px;
+    padding: 50px 0 30px;
 }
 
 /* --- ЗАГОЛОВОК --- */
@@ -32,11 +75,11 @@ body {
     margin-bottom: 45px;
 }
 .page-title h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 42px;
-    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    font-size: 46px;
+    font-weight: 100;
     color: #fff;
-    letter-spacing: 12px;
+    letter-spacing: 14px;
     text-transform: uppercase;
 }
 .page-title .title-line {
@@ -48,15 +91,15 @@ body {
 
 /* --- СЕКЦІЇ --- */
 .section {
-    padding: 32px 38px;
+    padding: 38px 42px;
     border-radius: 20px;
     margin-bottom: 22px;
-    transition: 0.4s ease;
     position: relative;
     overflow: hidden;
 }
 .section:hover {
     transform: translateY(-4px);
+    transition: transform 0.3s ease;
 }
 
 .section.milk {
@@ -66,7 +109,6 @@ body {
 .section.milk:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.8);
 }
-
 .section.cream {
     background: linear-gradient(135deg, #fdf8f0 0%, #f7edde 50%, #f0e4d0 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9);
@@ -74,7 +116,6 @@ body {
 .section.cream:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
 }
-
 .section.vanilla {
     background: linear-gradient(135deg, #fff9f0 0%, #f8f0e3 50%, #f2e8d5 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.85);
@@ -82,21 +123,12 @@ body {
 .section.vanilla:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.85);
 }
-
 .section.pearl {
     background: linear-gradient(135deg, #f9f4eb 0%, #f0e7d6 50%, #ebe0cc 100%);
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 .section.pearl:hover {
     box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.7);
-}
-
-.section.linen {
-    background: linear-gradient(135deg, #faf7f2 0%, #f2ece2 50%, #ece4d6 100%);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.75);
-}
-.section.linen:hover {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.75);
 }
 
 .section::before {
@@ -110,39 +142,26 @@ body {
     border-radius: 3px;
 }
 
-.section-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
-    margin-bottom: 14px;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(198,167,94,0.3);
-}
-
+/* --- ЗАГОЛОВКИ ПРОПИСОМ ЗОЛОТИМ --- */
 .section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 18px;
-    color: #5a4225;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    color: #c6a75e;
+    font-size: 44px;
+    margin-bottom: 20px;
 }
 
+/* Списки */
 .section ul {
     list-style: none;
     padding: 0;
 }
 .section ul li {
     font-family: 'Jost', sans-serif;
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.6;
-    color: #5c4f3e;
-    padding: 10px 0 10px 16px;
+    color: #4a3d30;
+    padding: 12px 0 12px 18px;
     position: relative;
     border-bottom: 1px solid rgba(198,167,94,0.12);
 }
@@ -155,15 +174,25 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: #c6a75e;
 }
 
-/* --- ФОРМА АНКЕТА --- */
+/* Розділювач */
+.divider {
+    text-align: center;
+    margin: 10px 0;
+    opacity: 0.4;
+    font-size: 14px;
+    color: #c6a75e;
+    letter-spacing: 8px;
+}
+
+/* --- ФОРМА --- */
 .form-section {
-    padding: 38px 42px;
+    padding: 42px 46px;
     border-radius: 20px;
     margin-bottom: 22px;
     position: relative;
@@ -182,46 +211,63 @@ body {
     border-radius: 3px;
 }
 .form-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 8px;
-    color: #5a4225;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 44px;
+    margin-bottom: 10px;
+    color: #c6a75e;
 }
 .form-section .form-sub {
-    font-family: 'Jost', sans-serif;
-    font-size: 14px;
+    font-family: 'Lora', serif;
+    font-size: 17px;
     color: #8a7d6a;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
+    font-style: italic;
 }
 
 .form-group {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
-.form-group label {
-    display: block;
+.form-group .label-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-group .q-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    color: #1a1510;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 10px;
+    flex-shrink: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.form-group .label-row span:last-child {
     font-family: 'Jost', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: #5a4225;
-    margin-bottom: 8px;
+    color: #4a3520;
     letter-spacing: 0.5px;
 }
-.form-group input,
-.form-group select {
+.form-group input {
     width: 100%;
-    padding: 14px 18px;
+    padding: 16px 20px;
     border: 1px solid rgba(198,167,94,0.3);
-    border-radius: 12px;
+    border-radius: 14px;
     background: rgba(255,255,255,0.7);
     font-family: 'Jost', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     color: #3d3225;
     outline: none;
     transition: 0.3s;
 }
-.form-group input:focus,
-.form-group select:focus {
+.form-group input:focus {
     border-color: #c6a75e;
     background: rgba(255,255,255,0.95);
     box-shadow: 0 0 0 3px rgba(198,167,94,0.15);
@@ -231,57 +277,28 @@ body {
     font-weight: 300;
 }
 
-/* Номер питання */
-.form-group .q-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
-    color: #1a1510;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
-.form-group .label-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-}
-.form-group .label-row span:last-child {
-    font-family: 'Jost', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #5a4225;
-    letter-spacing: 0.5px;
-}
-
-/* Кнопка відправити */
+/* --- КНОПКИ --- */
 .btn-wrapper {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 .btn-submit {
     display: inline-block;
-    padding: 18px 60px;
+    padding: 24px 80px;
     border: none;
-    border-radius: 50px;
+    border-radius: 60px;
     background: linear-gradient(135deg, #c6a75e, #e0bf75, #c6a75e);
     background-size: 200% 100%;
     color: #1a1510;
-    font-weight: 600;
-    font-family: 'Jost', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     cursor: pointer;
     box-shadow:
-        0 8px 25px rgba(198,167,94,0.35),
-        0 2px 8px rgba(0,0,0,0.2);
+        0 10px 35px rgba(198,167,94,0.4),
+        0 3px 10px rgba(0,0,0,0.2);
     transition: 0.4s;
     position: relative;
     overflow: hidden;
@@ -300,130 +317,131 @@ body {
     left: 100%;
 }
 .btn-submit:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     box-shadow:
-        0 12px 35px rgba(198,167,94,0.45),
-        0 4px 12px rgba(0,0,0,0.25);
+        0 15px 45px rgba(198,167,94,0.5),
+        0 5px 15px rgba(0,0,0,0.25);
     background-position: 100% 0;
 }
 
-/* Кнопка-посилання */
 .btn-link {
     display: inline-block;
-    padding: 18px 60px;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #c6a75e, #e0bf75, #c6a75e);
-    background-size: 200% 100%;
-    color: #1a1510;
-    font-weight: 600;
-    font-family: 'Jost', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
+    padding: 24px 80px;
+    border-radius: 60px;
+    background: linear-gradient(135deg, rgba(198,167,94,0.15), rgba(198,167,94,0.05));
+    border: 1px solid rgba(198,167,94,0.3);
+    color: #c6a75e;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     text-decoration: none;
-    box-shadow:
-        0 8px 25px rgba(198,167,94,0.35),
-        0 2px 8px rgba(0,0,0,0.2);
     transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-}
-.btn-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: 0.6s;
-}
-.btn-link:hover::before {
-    left: 100%;
 }
 .btn-link:hover {
+    background: linear-gradient(135deg, rgba(198,167,94,0.25), rgba(198,167,94,0.1));
     transform: scale(1.05);
-    box-shadow:
-        0 12px 35px rgba(198,167,94,0.45),
-        0 4px 12px rgba(0,0,0,0.25);
-    background-position: 100% 0;
+    border-color: rgba(198,167,94,0.5);
 }
 
-/* Розділювач */
-.divider {
+/* --- INSTAGRAM --- */
+.instagram-footer {
     text-align: center;
-    margin: 10px 0;
-    opacity: 0.4;
-    font-size: 14px;
-    color: #c6a75e;
-    letter-spacing: 8px;
+    padding: 40px 20px 50px;
 }
-
-/* Повідомлення успіху */
-.success-message {
-    display: none;
-    text-align: center;
-    padding: 40px;
+.instagram-footer .ig-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(198,167,94,0.4), transparent);
+    margin: 0 auto 20px;
 }
-.success-message .check-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+.instagram-footer a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(198,167,94,0.15), rgba(198,167,94,0.05));
+    border: 1px solid rgba(198,167,94,0.3);
+    transition: 0.4s;
+    text-decoration: none;
 }
-.success-message h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    color: #5a4225;
-    margin-bottom: 10px;
+.instagram-footer a:hover {
+    background: linear-gradient(135deg, #c6a75e, #dfc37a);
+    border-color: transparent;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(198,167,94,0.4);
 }
-.success-message p {
-    font-family: 'Jost', sans-serif;
-    font-size: 15px;
-    color: #8a7d6a;
+.instagram-footer a svg {
+    width: 28px;
+    height: 28px;
+    fill: #c6a75e;
+    transition: 0.4s;
+}
+.instagram-footer a:hover svg {
+    fill: #1a1510;
+}
+.instagram-footer .ig-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(198,167,94,0.5);
+    margin-top: 14px;
 }
 
 /* --- АДАПТИВ --- */
 @media(max-width:768px){
     .page-title h1 {
-        font-size: 32px;
+        font-size: 34px;
         letter-spacing: 8px;
     }
     .section, .form-section {
-        padding: 26px 28px;
+        padding: 28px 28px;
         border-radius: 16px;
     }
-    .section h2, .form-section h2 { font-size: 24px; }
-    .section ul li { font-size: 15px; }
+    .section h2, .form-section h2 { font-size: 38px; }
+    .section ul li { font-size: 17px; }
+    .btn-submit {
+        padding: 22px 65px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    .btn-link {
+        padding: 20px 55px;
+        font-size: 16px;
+    }
 }
 
 @media(max-width:480px){
     .page-title h1 {
-        font-size: 24px;
+        font-size: 26px;
         letter-spacing: 5px;
     }
     .section, .form-section {
-        padding: 22px 22px;
+        padding: 24px 22px;
         margin-bottom: 18px;
     }
-    .section h2, .form-section h2 { font-size: 22px; }
+    .section h2, .form-section h2 { font-size: 32px; }
     .section ul li {
-        font-size: 14px;
-        padding: 8px 0 8px 14px;
+        font-size: 15px;
+        padding: 10px 0 10px 14px;
     }
-    .form-group input,
-    .form-group select {
-        padding: 12px 14px;
-        font-size: 14px;
+    .form-group input {
+        padding: 14px 16px;
+        font-size: 15px;
     }
-    .btn-submit, .btn-link {
-        padding: 16px 45px;
+    .btn-submit {
+        padding: 20px 50px;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+    .btn-link {
+        padding: 18px 40px;
         font-size: 14px;
+        letter-spacing: 3px;
     }
 }
 </style>
@@ -433,14 +451,13 @@ body {
 <div class="container">
 
     <!-- ЗАГОЛОВОК -->
-    <div class="page-title">
+    <div class="page-title fade-up">
         <h1>СПІВПРАЦЯ</h1>
         <div class="title-line"></div>
     </div>
 
     <!-- ДЛЯ КОГО -->
-    <div class="section milk">
-        <div class="section-icon">👩‍💼</div>
+    <div class="section milk fade-left">
         <h2>Для кого ця співпраця</h2>
         <ul>
             <li>Жінки, які хочуть додатковий дохід</li>
@@ -450,12 +467,11 @@ body {
         </ul>
     </div>
 
-    <div class="divider">◆ ◆ ◆</div>
+    <div class="divider fade-up">◆ ◆ ◆</div>
 
     <!-- ЩО ОТРИМАЄТЕ -->
-    <div class="section cream">
-        <div class="section-icon">📌</div>
-        <h2>Що ви отримаєте в команді</h2>
+    <div class="section cream fade-right">
+        <h2>Що ви отримаєте</h2>
         <ul>
             <li>Навчання з нуля до результату</li>
             <li>Постійна підтримка наставника</li>
@@ -463,11 +479,10 @@ body {
         </ul>
     </div>
 
-    <div class="divider">◆ ◆ ◆</div>
+    <div class="divider fade-up">◆ ◆ ◆</div>
 
     <!-- РЕЗУЛЬТАТ -->
-    <div class="section vanilla">
-        <div class="section-icon">🎯</div>
+    <div class="section vanilla fade-left">
         <h2>Результат, до якого веду</h2>
         <ul>
             <li>Стабільний дохід</li>
@@ -477,11 +492,10 @@ body {
         </ul>
     </div>
 
-    <div class="divider">◆ ◆ ◆</div>
+    <div class="divider fade-up">◆ ◆ ◆</div>
 
     <!-- ВАРІАНТИ -->
-    <div class="section pearl">
-        <div class="section-icon">✔</div>
+    <div class="section pearl fade-right">
         <h2>Варіанти співпраці</h2>
         <ul>
             <li>Бути клієнтом — користуватись продуктами зі знижкою</li>
@@ -490,23 +504,22 @@ body {
         </ul>
     </div>
 
-    <div class="divider">◆ ◆ ◆</div>
+    <div class="divider fade-up">◆ ◆ ◆</div>
 
     <!-- АНКЕТА -->
-    <div class="form-section" id="formSection">
+    <div class="form-section fade-scale">
 
-        <div class="section-icon">📝</div>
         <h2>Анкета для співпраці</h2>
         <div class="form-sub">Заповніть форму — і я зв'яжусь з вами особисто</div>
 
-        <form id="anketaForm">
+        <form action="https://formspree.io/f/xqedpyrn" method="POST">
 
             <div class="form-group">
                 <div class="label-row">
                     <span class="q-number">1</span>
                     <span>Прізвище та ім'я</span>
                 </div>
-                <input type="text" name="name" placeholder="Ваше прізвище та ім'я" required>
+                <input type="text" name="Прізвище та ім'я" placeholder="Ваше прізвище та ім'я" required>
             </div>
 
             <div class="form-group">
@@ -514,7 +527,7 @@ body {
                     <span class="q-number">2</span>
                     <span>Номер телефону</span>
                 </div>
-                <input type="tel" name="phone" placeholder="+380 __ ___ __ __" required>
+                <input type="tel" name="Телефон" placeholder="+380 __ ___ __ __" required>
             </div>
 
             <div class="form-group">
@@ -522,7 +535,7 @@ body {
                     <span class="q-number">3</span>
                     <span>Електронна адреса</span>
                 </div>
-                <input type="email" name="email" placeholder="email@example.com" required>
+                <input type="email" name="Email" placeholder="email@example.com" required>
             </div>
 
             <div class="form-group">
@@ -530,7 +543,7 @@ body {
                     <span class="q-number">4</span>
                     <span>Місце роботи / Посада</span>
                 </div>
-                <input type="text" name="job" placeholder="Де працюєте та ким">
+                <input type="text" name="Місце роботи" placeholder="Де працюєте та ким">
             </div>
 
             <div class="form-group">
@@ -538,7 +551,7 @@ body {
                     <span class="q-number">5</span>
                     <span>Поточний дохід (в місяць)</span>
                 </div>
-                <input type="text" name="income_now" placeholder="Наприклад: 15 000 грн">
+                <input type="text" name="Поточний дохід" placeholder="Наприклад: 15 000 грн">
             </div>
 
             <div class="form-group">
@@ -546,7 +559,7 @@ body {
                     <span class="q-number">6</span>
                     <span>Бажаний дохід (в місяць)</span>
                 </div>
-                <input type="text" name="income_want" placeholder="Наприклад: 50 000 грн">
+                <input type="text" name="Бажаний дохід" placeholder="Наприклад: 50 000 грн">
             </div>
 
             <div class="form-group">
@@ -554,7 +567,7 @@ body {
                     <span class="q-number">7</span>
                     <span>Скільки годин на день можете приділяти бізнесу з LR?</span>
                 </div>
-                <input type="text" name="hours" placeholder="Наприклад: 2-3 години">
+                <input type="text" name="Годин на день" placeholder="Наприклад: 2-3 години">
             </div>
 
             <div class="btn-wrapper">
@@ -563,30 +576,40 @@ body {
 
         </form>
 
-        <!-- Повідомлення після відправки -->
-        <div class="success-message" id="successMsg">
-            <div class="check-icon">✓</div>
-            <h3>Дякую!</h3>
-            <p>Вашу анкету отримано. Я зв'яжусь з вами найближчим часом.</p>
-        </div>
-
     </div>
 
     <!-- КНОПКА НАЗАД -->
-    <div class="btn-wrapper">
+    <div class="btn-wrapper fade-up">
         <a href="index.html" class="btn-link">← На головну</a>
     </div>
 
 </div>
 
+<!-- INSTAGRAM -->
+<div class="instagram-footer fade-up">
+    <div class="ig-line"></div>
+    <a href="https://www.instagram.com/marina_pirog?igsh=MW50bXl1MTBsdGdsNw==" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+    </a>
+    <div class="ig-name">@marina_pirog</div>
+</div>
+
 <script>
-document.getElementById('anketaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    document.querySelector('.form-section .section-icon').style.display = 'none';
-    document.querySelector('.form-section h2').style.display = 'none';
-    document.querySelector('.form-section .form-sub').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale').forEach(el => {
+    observer.observe(el);
 });
 </script>
 
