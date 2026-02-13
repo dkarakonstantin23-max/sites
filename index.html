@@ -30,12 +30,14 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
-/* АДАПТОВАНИЙ ЗАГОЛОВОК (ЗМЕНШЕНО ШРИФТ) */
+/* ЗАГОЛОВОК ПІДНЯТО НАД ГОЛОВОЮ */
 .hero-header-text {
     position: absolute;
-    top: 170px; 
+    top: 40px; /* Значно піднято вгору */
     left: 8%;
+    right: 8%;
     z-index: 10;
+    text-align: left;
 }
 
 .hero-header-text .gold-italic {
@@ -43,14 +45,14 @@ body {
     font-style: italic;
     font-weight: 700;
     color: #c6a75e;
-    font-size: clamp(28px, 8vw, 42px); /* Трохи зменшено */
+    font-size: clamp(28px, 8vw, 42px);
     line-height: 1.1;
 }
 
 .hero-header-text .white-bold {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: clamp(16px, 5vw, 28px); /* Трохи зменшено */
+    font-size: clamp(16px, 5vw, 28px);
     text-transform: uppercase;
     color: #fff;
     margin: 2px 0;
@@ -60,10 +62,9 @@ body {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: #c6a75e;
-    font-size: clamp(12px, 3.5vw, 18px); /* Трохи зменшено */
+    font-size: clamp(12px, 3.5vw, 18px);
 }
 
-/* ПЛАШКА З ІМЕНЕМ (КОМПАКТНІША) */
 .name-plate-on-photo {
     position: absolute;
     bottom: 18%;
@@ -79,19 +80,18 @@ body {
 .name-plate-on-photo h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 16px; /* Зменшено для мобілки */
+    font-size: 16px;
     text-transform: uppercase;
 }
 
 .name-plate-on-photo p {
-    font-size: 9px; /* Зменшено */
+    font-size: 9px;
     font-weight: 700;
     color: #8a7a5a;
     text-transform: uppercase;
     margin-top: 3px;
 }
 
-/* НИЖНІЙ БЛОК (КОМПАКТНІШИЙ) */
 .cta-overlay-box {
     position: absolute;
     bottom: 3%;
@@ -102,14 +102,13 @@ body {
     border-radius: 15px;
     padding: 14px;
     text-align: center;
-    font-size: 12px; /* Зменшено шрифт тексту */
+    font-size: 12px;
     line-height: 1.4;
     z-index: 10;
     backdrop-filter: blur(3px);
 }
 .cta-overlay-box b { color: #c6a75e; }
 
-/* --- СЕКЦІЇ --- */
 .container {
     width: 92%;
     max-width: 600px;
