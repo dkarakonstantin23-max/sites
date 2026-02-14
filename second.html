@@ -5,242 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Співпраця | Марина Пирог</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Jost', sans-serif;
-    background: #1a1510;
-    background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(198,167,94,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(225,200,130,0.06) 0%, transparent 50%);
-    color: #fff;
-    overflow-x: hidden;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+font-family:'Jost',sans-serif;
+background:#1a1510;
+background-image:
+radial-gradient(ellipse at 20% 50%, rgba(198,167,94,0.08) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 20%, rgba(225,200,130,0.06) 0%, transparent 50%);
+color:#fff;overflow-x:hidden;}
 
-/* Стиль для літери "є" */
-.fix-e { 
-    font-family: Arial, Helvetica, sans-serif !important; 
-    text-transform: lowercase !important; 
-    font-weight: inherit; 
-    display: inline-block;
-}
+.container{width:90%;max-width:900px;margin:0 auto;padding:50px 0 30px;}
 
-/* --- АНІМАЦІЇ --- */
-.fade-up {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-scale {
-    opacity: 0;
-    transform: scale(0.85);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-scale.visible {
-    opacity: 1;
-    transform: scale(1);
-}
+.page-title{text-align:center;margin-bottom:45px;}
+.page-title h1{font-family:'Roboto',sans-serif;font-size:46px;font-weight:100;color:#fff;letter-spacing:14px;text-transform:uppercase;}
+.page-title .title-line{width:60px;height:1px;background:linear-gradient(to right,transparent,#c6a75e,transparent);margin:15px auto 0;}
 
-/* --- КОНТЕЙНЕР --- */
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 0 30px;
-}
+.section{padding:38px 42px;border-radius:20px;margin-bottom:22px;position:relative;}
+.section:hover{transform:translateY(-4px);transition:0.3s;}
+.section.milk{background:linear-gradient(135deg,#faf6ee 0%,#f3ead8 50%,#efe5d0 100%);}
+.section.cream{background:linear-gradient(135deg,#fdf8f0 0%,#f7edde 50%,#f0e4d0 100%);}
+.section.vanilla{background:linear-gradient(135deg,#fff9f0 0%,#f8f0e3 50%,#f2e8d5 100%);}
+.section.pearl{background:linear-gradient(135deg,#f9f4eb 0%,#f0e7d6 50%,#ebe0cc 100%);}
+.section::before{content:'';position:absolute;left:0;top:15%;height:70%;width:3px;background:linear-gradient(to bottom,transparent,#c6a75e,transparent);}
+.section h2{font-family:'Great Vibes',cursive;color:#c6a75e;font-size:44px;margin-bottom:20px;}
+.section p,.section ul li{font-size:19px;line-height:1.85;color:#4a3d30;}
+.section ul{list-style:none;}
+.section ul li{padding:12px 0 12px 18px;position:relative;border-bottom:1px solid rgba(198,167,94,0.12);}
+.section ul li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#c6a75e;}
 
-/* --- ЗАГОЛОВОК --- */
-.page-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-.page-title h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 46px;
-    font-weight: 100;
-    color: #fff;
-    letter-spacing: 14px;
-    text-transform: uppercase;
-}
-.page-title .title-line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #c6a75e, transparent);
-    margin: 15px auto 0;
-}
+.divider{text-align:center;margin:10px 0;opacity:0.4;font-size:14px;color:#c6a75e;letter-spacing:8px;}
 
-/* --- СЕКЦІЇ --- */
-.section {
-    padding: 38px 42px;
-    border-radius: 20px;
-    margin-bottom: 22px;
-    position: relative;
-    overflow: hidden;
-}
-.section:hover {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
-}
+.form-section{padding:42px 46px;border-radius:20px;margin-bottom:22px;background:linear-gradient(135deg,#faf6ee 0%,#f3ead8 50%,#efe5d0 100%);}
+.form-section h2{font-family:'Great Vibes',cursive;color:#c6a75e;font-size:44px;}
+.form-sub{font-family:'Lora',serif;font-size:17px;color:#8a7d6a;margin-bottom:32px;font-style:italic;}
 
-.section.milk { background: linear-gradient(135deg, #faf6ee 0%, #f3ead8 50%, #efe5d0 100%); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
-.section.cream { background: linear-gradient(135deg, #fdf8f0 0%, #f7edde 50%, #f0e4d0 100%); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
-.section.vanilla { background: linear-gradient(135deg, #fff9f0 0%, #f8f0e3 50%, #f2e8d5 100%); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
-.section.pearl { background: linear-gradient(135deg, #f9f4eb 0%, #f0e7d6 50%, #ebe0cc 100%); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+.form-group{margin-bottom:24px;}
+.label-row{display:flex;align-items:center;margin-bottom:10px;}
+.q-number{width:28px;height:28px;border-radius:50%;background:#c6a75e;color:#1a1510;display:flex;align-items:center;justify-content:center;font-weight:600;margin-right:10px;}
+.label-row span:not(.q-number){color:#000;} /* ВОПРОСЫ ЧЁРНЫЕ */
 
-.section::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 15%; height: 70%; width: 3px;
-    background: linear-gradient(to bottom, transparent, #c6a75e, transparent);
+.form-group input{
+width:100%;padding:16px 20px;border-radius:14px;
+border:1px solid rgba(198,167,94,0.3);
+background:rgba(255,255,255,0.9);
+outline:none;color:#000;
 }
+.form-group input:focus{border-color:#c6a75e;background:#fff;}
 
-.section h2 {
-    font-family: 'Great Vibes', cursive;
-    font-weight: 400;
-    color: #c6a75e;
-    font-size: 44px;
-    margin-bottom: 20px;
+.btn-wrapper{text-align:center;margin-top:40px;}
+.btn-submit{
+padding:24px 80px;border-radius:60px;border:none;
+background:linear-gradient(135deg,#c6a75e,#e0bf75);
+color:#1a1510;font-size:20px;letter-spacing:5px;
+text-transform:uppercase;cursor:pointer;transition:0.4s;
 }
-
-.section p, .section ul li {
-    font-family: 'Jost', sans-serif;
-    font-size: 19px;
-    line-height: 1.85;
-    color: #4a3d30;
+.btn-submit:hover{transform:scale(1.05);}
+.btn-link{
+display:inline-block;padding:24px 80px;border-radius:60px;
+border:1px solid rgba(198,167,94,0.3);
+color:#c6a75e;text-decoration:none;text-transform:uppercase;letter-spacing:4px;
 }
-
-.section ul { list-style: none; padding: 0; }
-.section ul li {
-    padding: 12px 0 12px 18px;
-    position: relative;
-    border-bottom: 1px solid rgba(198,167,94,0.12);
-}
-.section ul li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 50%; transform: translateY(-50%);
-    width: 6px; height: 6px; border-radius: 50%; background: #c6a75e;
-}
-
-.divider { text-align: center; margin: 10px 0; opacity: 0.4; font-size: 14px; color: #c6a75e; letter-spacing: 8px; }
-
-/* --- ФОРМА --- */
-.form-section {
-    padding: 42px 46px;
-    border-radius: 20px;
-    margin-bottom: 22px;
-    position: relative;
-    background: linear-gradient(135deg, #faf6ee 0%, #f3ead8 50%, #efe5d0 100%);
-}
-.form-section h2 { font-family: 'Great Vibes', cursive; color: #c6a75e; font-size: 44px; }
-.form-section .form-sub { font-family: 'Lora', serif; font-size: 17px; color: #8a7d6a; margin-bottom: 32px; font-style: italic; }
-
-.form-group { margin-bottom: 24px; }
-.form-group .label-row { display: flex; align-items: center; margin-bottom: 10px; }
-.form-group .q-number {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: #c6a75e; color: #1a1510;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 600; margin-right: 10px;
-}
-.form-group input {
-    width: 100%; padding: 16px 20px; border-radius: 14px;
-    border: 1px solid rgba(198,167,94,0.3); background: rgba(255,255,255,0.7);
-    outline: none; transition: 0.3s;
-}
-.form-group input:focus { border-color: #c6a75e; background: #fff; }
-
-/* --- КНОПКИ --- */
-.btn-wrapper { text-align: center; margin-top: 40px; }
-.btn-submit {
-    padding: 24px 80px; border-radius: 60px; border: none;
-    background: linear-gradient(135deg, #c6a75e, #e0bf75);
-    color: #1a1510; font-size: 20px; letter-spacing: 5px;
-    text-transform: uppercase; cursor: pointer; transition: 0.4s;
-}
-.btn-submit:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(198,167,94,0.4); }
-
-.btn-link {
-    display: inline-block; padding: 24px 80px; border-radius: 60px;
-    border: 1px solid rgba(198,167,94,0.3); color: #c6a75e;
-    text-decoration: none; text-transform: uppercase; letter-spacing: 4px; transition: 0.4s;
-}
-.btn-link:hover { background: rgba(198,167,94,0.1); transform: scale(1.05); }
-
-/* --- FOOTER SOCIALS --- */
-.social-footer {
-    text-align: center;
-    padding: 40px 20px 60px;
-}
-.social-icons-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-.social-footer a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(198,167,94,0.15), rgba(198,167,94,0.05));
-    border: 1px solid rgba(198,167,94,0.3);
-    transition: 0.4s;
-    text-decoration: none;
-}
-.social-footer a:hover {
-    background: linear-gradient(135deg, #c6a75e, #dfc37a);
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(198,167,94,0.4);
-}
-.social-footer a svg {
-    width: 28px;
-    height: 28px;
-    fill: #c6a75e;
-}
-.social-footer a:hover svg {
-    fill: #1a1510;
-}
-.social-footer .ig-name {
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(198,167,94,0.5);
-}
+.btn-link:hover{background:rgba(198,167,94,0.1);}
 
 @media(max-width:768px){
-    .page-title h1 { font-size: 34px; letter-spacing: 8px; }
-    .section h2, .form-section h2 { font-size: 38px; }
+.page-title h1{font-size:34px;letter-spacing:8px;}
+.section h2,.form-section h2{font-size:38px;}
 }
 </style>
 </head>
@@ -248,110 +81,80 @@ body {
 
 <div class="container">
 
-    <div class="page-title fade-up">
-        <h1>СПІВПРАЦЯ</h1>
-        <div class="title-line"></div>
-    </div>
-
-    <div class="section milk fade-left">
-        <h2>Для кого ця співпраця</h2>
-        <ul>
-            <li>Мам у декреті, які прагнуть реалізувати себе та працювати з дому</li>
-            <li>Власників традиційного бізнесу, які хочуть більше свободи і менше хаосу</li>
-            <li>Б'юті-майстрів, які хочуть масштабувати свої послуги і стабільно заробляти</li>
-            <li>Людей з найму, які хочуть фінансової свободи</li>
-            <li>Студентів, які шукають додатковий дохід і розвиток</li>
-        </ul>
-    </div>
-
-    <div class="divider fade-up">◆ ◆ ◆</div>
-
-    <div class="section cream fade-right">
-        <h2>Партнерство</h2>
-        <p>Системне побудування бізнесу, кожен партнер отримує чітку стратегію, підтримку та реальні інструменти для зростання: покрокове навчання та продумана стратегія розвитку.</p>
-    </div>
-
-    <div class="divider fade-up">◆ ◆ ◆</div>
-
-    <div class="section vanilla fade-left">
-        <h2>Результат, до якого веду</h2>
-        <ul>
-            <li>Стабільний дохід</li>
-            <li>Впевненість у собі</li>
-            <li>Сильна команда</li>
-            <li>Особистий бренд</li>
-        </ul>
-    </div>
-
-    <div class="divider fade-up">◆ ◆ ◆</div>
-
-    <div class="section pearl fade-right">
-        <h2>Варіанти співпраці</h2>
-        <ul>
-            <li>Бути клієнтом</li>
-            <li>Бути VIP — максимальна знижка та бонуси</li>
-            <li>Бути партнером — будувати бізнес разом зі мною</li>
-        </ul>
-    </div>
-
-    <div class="divider fade-up">◆ ◆ ◆</div>
-
-    <div class="form-section fade-scale">
-        <h2>Анкета для співпраці</h2>
-        <div class="form-sub">Заповніть форму — і я зв'яжусь з вами особисто</div>
-        <form action="https://formspree.io/f/xqedpyrn" method="POST">
-            <div class="form-group">
-                <div class="label-row"><span class="q-number">1</span><span>Прізвище та ім'я</span></div>
-                <input type="text" name="Прізвище та ім'я" placeholder="Ваше прізвище та ім'я" required>
-            </div>
-            <div class="form-group">
-                <div class="label-row"><span class="q-number">2</span><span>Номер телефону</span></div>
-                <input type="tel" name="Телефон" placeholder="+380 __ ___ __ __" required>
-            </div>
-            <div class="form-group">
-                <div class="label-row"><span class="q-number">3</span><span>Електронна адреса</span></div>
-                <input type="email" name="Email" placeholder="email@example.com" required>
-            </div>
-            <div class="btn-wrapper">
-                <button type="submit" class="btn-submit">Надіслати анкету</button>
-            </div>
-        </form>
-    </div>
-
-    <div class="btn-wrapper fade-up">
-        <a href="index.html" class="btn-link">← На головну</a>
-    </div>
-
+<div class="page-title">
+<h1>СПІВПРАЦЯ</h1>
+<div class="title-line"></div>
 </div>
 
-<div class="social-footer fade-up">
-    <div class="social-icons-row">
-        <a href="https://www.instagram.com/marina_pirog_lr" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="https://t.me/marina_pirog_LR" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.35-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.36-.49 1-.74 3.91-1.7 6.52-2.82 7.83-3.37 3.71-1.55 4.48-1.82 4.99-1.83.11 0 .36.03.52.16.14.11.18.26.19.38 0 .04.01.12 0 .19z"/></svg>
-        </a>
-    </div>
-    <div class="ig-name">@marina_pirog_LR</div>
+<div class="section milk">
+<h2>Для кого ця співпраця</h2>
+<ul>
+<li>Мам у декреті</li>
+<li>Власників бізнесу</li>
+<li>Б'юті-майстрів</li>
+<li>Людей з найму</li>
+<li>Студентів</li>
+</ul>
 </div>
 
-<script>
-// Заміна "є/Є"
-document.body.innerHTML = document.body.innerHTML.replace(/[єЄ]/g, '<span class="fix-e">є</span>');
+<div class="divider">◆ ◆ ◆</div>
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.15 });
+<div class="section cream">
+<h2>Партнерство</h2>
+<p>Системне побудування бізнесу, стратегія та підтримка.</p>
+</div>
 
-document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale').forEach(el => {
-    observer.observe(el);
-});
-</script>
+<div class="divider">◆ ◆ ◆</div>
+
+<div class="section vanilla">
+<h2>Результат</h2>
+<ul>
+<li>Стабільний дохід</li>
+<li>Впевненість</li>
+<li>Команда</li>
+<li>Особистий бренд</li>
+</ul>
+</div>
+
+<div class="divider">◆ ◆ ◆</div>
+
+<div class="section pearl">
+<h2>Варіанти співпраці</h2>
+<ul>
+<li>Клієнт</li>
+<li>VIP</li>
+<li>Партнер</li>
+</ul>
+</div>
+
+<div class="divider">◆ ◆ ◆</div>
+
+<div class="form-section">
+<h2>Анкета для співпраці</h2>
+<div class="form-sub">Заповніть форму — і я зв'яжусь з вами</div>
+
+<form action="https://formspree.io/f/xqedpyrn" method="POST">
+
+<div class="form-group"><div class="label-row"><span class="q-number">1</span><span>Прізвище та ім'я</span></div><input type="text" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">2</span><span>Номер телефону</span></div><input type="tel" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">3</span><span>Електронна адреса</span></div><input type="email" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">4</span><span>Місце роботи / Посада</span></div><input type="text" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">5</span><span>Поточний дохід (в місяць)</span></div><input type="text" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">6</span><span>Бажаний дохід (в місяць)</span></div><input type="text" required></div>
+<div class="form-group"><div class="label-row"><span class="q-number">7</span><span>Скільки годин на день можете приділяти бізнесу?</span></div><input type="text" required></div>
+
+<div class="btn-wrapper">
+<button type="submit" class="btn-submit">Надіслати анкету</button>
+</div>
+
+</form>
+</div>
+
+<div class="btn-wrapper">
+<a href="index.html" class="btn-link">← На головну</a>
+</div>
+
+</div>
 
 </body>
 </html>
