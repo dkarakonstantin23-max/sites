@@ -160,7 +160,7 @@ body {
     display: block;
     width: 100%;
     max-width: 300px;
-    margin: 40px auto;
+    margin: 40px auto 10px;
     padding: 22px;
     background: linear-gradient(135deg, #c6a75e, #e0bf75);
     border-radius: 50px;
@@ -171,6 +171,25 @@ body {
     text-decoration: none;
     box-shadow: 0 10px 25px rgba(198,167,94,0.4);
 }
+
+/* СТИЛЬ ДЛЯ ТЕЛЕГРАМ ПОСИЛАННЯ З ІКОНКОЮ */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #c6a75e;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: #c6a75e;
+}
+.social-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -231,6 +250,11 @@ body {
     </div>
 
     <a href="second.html" class="btn-next">Далі →</a>
+    
+    <a href="https://t.me/marina_pirog_LR" class="social-link">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.35-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.36-.49 1-.74 3.91-1.7 6.52-2.82 7.83-3.37 3.71-1.55 4.48-1.82 4.99-1.83.11 0 .36.03.52.16.14.11.18.26.19.38 0 .04.01.12 0 .19z"/></svg>
+        @marina_pirog_LR
+    </a>
 </div>
 
 <script>
