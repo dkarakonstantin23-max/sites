@@ -24,7 +24,6 @@
             display: inline;
         }
 
-        /* --- HERO SECTION --- */
         .hero-wrapper { 
             position: relative; 
             width: 100%; 
@@ -99,7 +98,6 @@
             margin-top: 3px; 
         }
 
-        /* --- CONTENT BLOCKS --- */
         .container { 
             width: 92%; 
             max-width: 600px; 
@@ -149,7 +147,6 @@
             letter-spacing: 5px; 
         }
 
-        /* --- ANIMATIONS --- */
         .fade-in { 
             opacity: 0; 
             transform: translateY(30px); 
@@ -161,7 +158,6 @@
             transform: translateY(0); 
         }
 
-        /* --- BUTTON & SOCIAL --- */
         .btn-next { 
             display: block; 
             width: 100%; 
@@ -256,12 +252,10 @@
         <a href="second.html" class="btn-next fade-in">Далі →</a>
         
         <div class="social-footer fade-in">
-            <!-- Instagram — с JS обработчиком -->
-            <a id="ig-link" href="https://www.instagram.com/marina_pirog/" class="social-icon">
+            <a id="ig-link" href="#" class="social-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
 
-            <!-- Telegram -->
             <a href="https://t.me/marina_pirog_LR" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.35-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.36-.49 1-.74 3.91-1.7 6.52-2.82 7.83-3.37 3.71-1.55 4.48-1.82 4.99-1.83.11 0 .36.03.52.16.14.11.18.26.19.38 0 .04.01.12 0 .19z"/></svg>
             </a>
@@ -269,40 +263,61 @@
     </div>
 
     <script>
-        // ===== INSTAGRAM — умный обработчик для мобильных =====
+        // ===== INSTAGRAM =====
         document.getElementById('ig-link').addEventListener('click', function(e) {
             e.preventDefault();
             
             var username = 'marina_pirog';
+            var webUrl = 'https://www.instagram.com/' + username + '/';
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             
-            if (isMobile) {
-                if (isIOS) {
-                    // iOS — открываем напрямую через схему приложения
-                    window.location.href = 'instagram://user?username=' + username;
-                    
-                    // Если приложение не открылось — через 2 сек откроем в браузере
-                    setTimeout(function() {
-                        window.location.href = 'https://www.instagram.com/' + username + '/';
-                    }, 2000);
-                } else {
-                    // Android — через intent
-                    try {
-                        window.location.href = 'intent://www.instagram.com/' + username + '/#Intent;scheme=https;package=com.instagram.android;end';
-                    } catch(err) {
-                        window.location.href = 'https://www.instagram.com/' + username + '/';
-                    }
-                    
-                    // Запасной вариант
-                    setTimeout(function() {
-                        window.location.href = 'https://www.instagram.com/' + username + '/';
-                    }, 2000);
-                }
-            } else {
-                // ПК — просто открываем в новой вкладке
-                window.open('https://www.instagram.com/' + username + '/', '_blank');
+            if (!isMobile) {
+                // ПК — просто новая вкладка
+                window.open(webUrl, '_blank');
+                return;
             }
+            
+            // Мобильный — открываем приложение
+            var appOpened = false;
+            var fallbackTimer = null;
+            
+            // Когда страница теряет фокус — значит приложение открылось
+            function onBlur() {
+                appOpened = true;
+                if (fallbackTimer) {
+                    clearTimeout(fallbackTimer);
+                    fallbackTimer = null;
+                }
+                window.removeEventListener('blur', onBlur);
+                document.removeEventListener('visibilitychange', onVisChange);
+            }
+            
+            function onVisChange() {
+                if (document.hidden) {
+                    appOpened = true;
+                    if (fallbackTimer) {
+                        clearTimeout(fallbackTimer);
+                        fallbackTimer = null;
+                    }
+                    window.removeEventListener('blur', onBlur);
+                    document.removeEventListener('visibilitychange', onVisChange);
+                }
+            }
+            
+            window.addEventListener('blur', onBlur);
+            document.addEventListener('visibilitychange', onVisChange);
+            
+            // Пробуем открыть приложение
+            window.location.href = 'instagram://user?username=' + username;
+            
+            // Если через 2.5 сек приложение НЕ открылось — тогда веб
+            fallbackTimer = setTimeout(function() {
+                if (!appOpened) {
+                    window.removeEventListener('blur', onBlur);
+                    document.removeEventListener('visibilitychange', onVisChange);
+                    window.location.href = webUrl;
+                }
+            }, 2500);
         });
 
         // ===== Безопасная замена "є" =====
@@ -332,7 +347,7 @@
         }
         fixCyrillicE(document.body);
 
-        // ===== Анімація при скролі =====
+        // ===== Анімація =====
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
